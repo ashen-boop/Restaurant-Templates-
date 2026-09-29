@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Social Media Templates · The Artistic Unity</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f8f9fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: #1e1e2f;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: #ffffff;
+      padding: 4rem 2rem 3rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .hero h1 {
+      font-family: 'Georgia', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: #0b1424;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #3d4a5a;
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .price-tag {
+      display: inline-block;
+      background: #eef3fc;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a3b7a;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #1a3b7a;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      border: 1px solid #1a3b7a;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px -8px rgba(26, 59, 122, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: #0b1f4a;
+      border-color: #0b1f4a;
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-head .marker {
+      flex: 0 0 auto;
+      width: 0.55rem;
+      height: 1.6rem;
+      border-radius: 4px;
+      background: #3b6bcf;
+    }
+
+    .section-head h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #0b1424;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-left: 4px solid #3b6bcf;
+      border-radius: 1rem;
+      padding: 1.2rem 1.5rem;
+      font-size: 1rem;
+      color: #2b3550;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .feature-item .check {
+      flex: 0 0 auto;
+      color: #3b6bcf;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* WHAT'S INSIDE */
+    .inside-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .inside-grid { grid-template-columns: 1fr; }
+    }
+
+    .inside-card {
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-radius: 1rem;
+      padding: 1.2rem 1.5rem;
+    }
+
+    .inside-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0b1b3a;
+      margin-bottom: 0.4rem;
+    }
+
+    .inside-card p {
+      font-size: 0.9rem;
+      color: #55617d;
+      margin: 0;
+    }
+
+    .inside-card .count {
+      display: inline-block;
+      background: #eef3fc;
+      color: #1a3b7a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.7rem;
+      border-radius: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ELEGANT NOTE */
+    .inside-note {
+      position: relative;
+      background: linear-gradient(135deg, #f7faff 0%, #eef3fc 100%);
+      border: 1px solid #d8e3f5;
+      border-radius: 1.2rem;
+      padding: 1.6rem 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      font-style: italic;
+      color: #1a3b7a;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 16px -6px rgba(26, 59, 122, 0.15);
+    }
+
+    .inside-note::before {
+      content: "✦";
+      display: block;
+      font-size: 0.9rem;
+      color: #6f9bff;
+      margin-bottom: 0.4rem;
+      font-style: normal;
+    }
+
+    .inside-note::after {
+      content: "✦";
+      display: block;
+      font-size: 0.9rem;
+      color: #6f9bff;
+      margin-top: 0.4rem;
+      font-style: normal;
+    }
+
+    /* WHO IT'S FOR */
+    .audience-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .audience-list li {
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      color: #2b3550;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .audience-list li .dot {
+      flex: 0 0 auto;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: #3b6bcf;
+    }
+
+    /* HOW IT WORKS */
+    .steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      color: #2b3550;
+    }
+
+    .steps .num {
+      flex: 0 0 auto;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      background: #eef3fc;
+      border: 1px solid #e2eaf5;
+      color: #1f3b7a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.05rem;
+    }
+
+    /* FAQ */
+    .faq-card {
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-radius: 1rem;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-card .q {
+      font-weight: 700;
+      color: #0b1b3a;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-card .a {
+      font-size: 0.95rem;
+      color: #55617d;
+      border-top: 1px dashed #e4ebf5;
+      padding-top: 0.5rem;
+    }
+
+    /* CTA BOTTOM */
+    .cta-section {
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      border: 1px solid #e4ebf5;
+      margin: 2rem 0 4rem 0;
+    }
+
+    .cta-section h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #0b1424;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      color: #3d4a5a;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #7a86a0;
+      padding: 2rem 0 3rem 0;
+      border-top: 1px solid #e9ecef;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .section-head h2 { font-size: 1.5rem; }
+      .cta-section h2 { font-size: 1.6rem; }
+      .inside-note { font-size: 1rem; padding: 1.2rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Restaurant Social Media Templates</h1>
+      <p>29 ready-to-use Canva templates for restaurants. Feed posts and stories. No design skills needed. Reusable forever.</p>
+      <div class="price-tag">$49 · One-Time Payment</div>
+      <br>
+      <a href="https://copecart.com/us/products/b2eab0b2/checkout" class="btn-primary" target="_blank" rel="noopener">Get Instant Access →</a>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>What's Inside</h2>
+      </div>
+
+      <div class="inside-note">
+        Use this for organic reach or paid ads. You have unlimited combinations.
+      </div>
+
+      <div class="inside-grid">
+        <div class="inside-card">
+          <span class="count">7 Templates</span>
+          <h3>Product Show-Off</h3>
+          <p>7 different layouts to showcase your dishes. Single dish, split screen, grid, full-bleed, reviews, chef's pick, and carousel.</p>
+        </div>
+        <div class="inside-card">
+          <span class="count">3 Templates</span>
+          <h3>Introduction</h3>
+          <p>Tell your story. Meet the chef, share your journey, and show what makes your restaurant unique.</p>
+        </div>
+        <div class="inside-card">
+          <span class="count">4 Templates</span>
+          <h3>Services & Info</h3>
+          <p>Opening hours, location, reservation details, and delivery information — all ready to post.</p>
+        </div>
+        <div class="inside-card">
+          <span class="count">3 Templates</span>
+          <h3>Desserts & Freshness</h3>
+          <p>Show off your sweet endings and daily fresh ingredients with dedicated designs.</p>
+        </div>
+        <div class="inside-card">
+          <span class="count">7 Templates</span>
+          <h3>Seasonal & Unique</h3>
+          <p>Seasonal menu highlights and authentic dishes from different nations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: ORGANIC PREVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>See Your Post Live</h2>
+      </div>
+      <p style="color:#3d4a5a; font-size:1rem; margin-bottom:1.5rem; max-width:620px;">
+        Pick any organic idea and see exactly how it appears on your Instagram and Facebook feed — likes, caption, hashtags, everything.
+      </p>
+      <a href="https://organic-preview-page.vercel.app/"
+         target="_blank"
+         rel="noopener"
+         class="btn-primary">
+        👀 See Your Post Live →
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 2: CAROUSEL PREVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>See Your Ad Live</h2>
+      </div>
+      <p style="color:#3d4a5a; font-size:1rem; margin-bottom:1.5rem; max-width:620px;">
+        Pick any paid ad idea and see exactly how it appears on Facebook and Instagram carousel — real cards, real layout.
+      </p>
+      <a href="https://carousel-preview-page.vercel.app/"
+         target="_blank"
+         rel="noopener"
+         class="btn-primary">
+        👀 See Your Ad Live →
+      </a>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>Who It's For</h2>
+      </div>
+      <ul class="audience-list">
+        <li><span class="dot"></span> Restaurant owners who want to look professional on Instagram</li>
+        <li><span class="dot"></span> Cafes, bistros, food trucks, and small eateries</li>
+        <li><span class="dot"></span> Anyone who posts food content but isn't a designer</li>
+        <li><span class="dot"></span> Businesses tired of posting the same boring photos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>How It Works</h2>
+      </div>
+      <ul class="steps">
+        <li><span class="num">1</span> Buy the pack — instant download.</li>
+        <li><span class="num">2</span> Open the PDF and click any template link.</li>
+        <li><span class="num">3</span> Canva opens with your own editable copy.</li>
+        <li><span class="num">4</span> Swap the text and photo. Download. Post.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>Questions</h2>
+      </div>
+
+      <div class="faq-card">
+        <div class="q">Do I need Canva Pro?</div>
+        <div class="a">No. All templates work with a free Canva account. Some premium elements may require Pro, but the layouts are fully editable without it.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="q">Can I reuse the templates?</div>
+        <div class="a">Yes. Reuse them forever. Swap the photo, change the text, post again. One pack covers your entire year of content.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="q">Is this a subscription?</div>
+        <div class="a">No. One-time payment of $49. You own the templates and can use them as long as you want.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="q">What if I don't know how to use Canva?</div>
+        <div class="a">If you can type and add a photo, you can use these templates. The PDF includes simple instructions.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="container">
+    <div class="cta-section">
+      <h2>Start Posting Like a Pro</h2>
+      <p>29 templates. One-time payment. Instant access.</p>
+      <a href="https://copecart.com/us/products/b2eab0b2/checkout" class="btn-primary" target="_blank" rel="noopener">Get Your Templates →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-note">
+    © 2026 The Artistic Unity — Restaurant Templates · All rights reserved.
+  </div>
+
+</body>
+</html>
