@@ -69,6 +69,7 @@
       border: 1px solid #1a3b7a;
       transition: all 0.2s ease;
       box-shadow: 0 6px 18px -8px rgba(26, 59, 122, 0.4);
+      cursor: pointer;
     }
 
     .btn-primary:hover {
@@ -102,36 +103,6 @@
       font-size: 1.8rem;
       font-weight: 400;
       color: #0b1424;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-
-    @media (max-width: 600px) {
-      .feature-grid { grid-template-columns: 1fr; }
-    }
-
-    .feature-item {
-      background: #ffffff;
-      border: 1px solid #e4ebf5;
-      border-left: 4px solid #3b6bcf;
-      border-radius: 1rem;
-      padding: 1.2rem 1.5rem;
-      font-size: 1rem;
-      color: #2b3550;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-    }
-
-    .feature-item .check {
-      flex: 0 0 auto;
-      color: #3b6bcf;
-      font-weight: 700;
-      font-size: 1.1rem;
     }
 
     /* WHAT'S INSIDE */
@@ -323,19 +294,286 @@
       margin-bottom: 1.5rem;
     }
 
+    /* CONTACT / FOOTER */
+    .contact-block {
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-block h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #0b1424;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-block p {
+      font-size: 0.95rem;
+      color: #3d4a5a;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-block a {
+      color: #1a3b7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b2c7e8;
+    }
+
+    .contact-block a:hover {
+      color: #0b1f4a;
+      border-bottom-color: #1a3b7a;
+    }
+
     .footer-note {
       text-align: center;
       font-size: 0.8rem;
       color: #7a86a0;
-      padding: 2rem 0 3rem 0;
+      padding: 2rem 0 1.5rem 0;
       border-top: 1px solid #e9ecef;
     }
+
+    /* ===== APPEALING LEGAL BUTTON ===== */
+    .legal-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      background: linear-gradient(135deg, #1a3b7a 0%, #3b6bcf 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 60px;
+      padding: 0.75rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 6px 20px -8px rgba(26, 59, 122, 0.5);
+      transition: all 0.25s ease;
+    }
+
+    .legal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px -8px rgba(26, 59, 122, 0.6);
+      background: linear-gradient(135deg, #0b1f4a 0%, #1a3b7a 100%);
+    }
+
+    .legal-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 12px -4px rgba(26, 59, 122, 0.5);
+    }
+
+    .legal-btn .shield {
+      font-size: 1.1rem;
+      line-height: 1;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+    }
+
+    /* ===== LEGAL MODAL ===== */
+    .legal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 20, 36, 0.65);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+
+    .legal-overlay.active { display: flex; }
+
+    .legal-popup {
+      background: #ffffff;
+      max-width: 720px;
+      width: 100%;
+      border-radius: 1.8rem;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.3);
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: popIn 0.25s ease-out;
+    }
+
+    @keyframes popIn {
+      0%   { opacity: 0; transform: scale(0.95) translateY(10px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .legal-header {
+      padding: 1.4rem 2rem 1rem 2rem;
+      background: linear-gradient(135deg, #f7faff 0%, #eef3fc 100%);
+      border-bottom: 1px solid #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .legal-header h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #0b1424;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .legal-header .close-x {
+      background: #ffffff;
+      border: 1px solid #d8e3f5;
+      color: #1a3b7a;
+      width: 2.2rem;
+      height: 2.2rem;
+      min-width: 2.2rem;
+      border-radius: 50%;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+      font-family: inherit;
+      padding: 0;
+    }
+
+    .legal-header .close-x:hover {
+      background: #1a3b7a;
+      color: #ffffff;
+      border-color: #1a3b7a;
+    }
+
+    /* ===== FIXED TABS ===== */
+    .legal-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: #ffffff;
+      border-bottom: 1px solid #e9ecef;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .legal-tabs::-webkit-scrollbar { display: none; }
+
+    .legal-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      height: 2.4rem;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 60px;
+      padding: 0 1.3rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      line-height: 1;
+      color: #1e1e2f;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+      transition: all 0.15s;
+      text-align: center;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+
+    .legal-tab:hover {
+      border-color: #1a3b7a;
+      background: #eef3fc;
+    }
+
+    .legal-tab.active {
+      background: #1a3b7a;
+      color: #fff;
+      border-color: #1a3b7a;
+    }
+
+    /* ===== BODY ===== */
+    .legal-body {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      color: #2b3550;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .legal-body::-webkit-scrollbar { width: 6px; }
+    .legal-body::-webkit-scrollbar-track { background: #f0f2f5; border-radius: 10px; }
+    .legal-body::-webkit-scrollbar-thumb { background: #b2c7e8; border-radius: 10px; }
+
+    .legal-body h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0b1b3a;
+      margin: 1.2rem 0 0.4rem 0;
+    }
+
+    .legal-body h4:first-child { margin-top: 0; }
+
+    .legal-body p { margin-bottom: 0.6rem; }
+
+    .legal-body ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-body li { margin-bottom: 0.3rem; }
+
+    /* ===== FOOTER ===== */
+    .legal-footer {
+      padding: 1rem 2rem 1.5rem 2rem;
+      border-top: 1px solid #e9ecef;
+      background: #fafbfd;
+      flex-shrink: 0;
+    }
+
+    .legal-close-btn {
+      width: 100%;
+      background: #1a3b7a;
+      color: #fff;
+      border: none;
+      border-radius: 60px;
+      padding: 0.8rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .legal-close-btn:hover { background: #0b1f4a; }
 
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; }
       .section-head h2 { font-size: 1.5rem; }
       .cta-section h2 { font-size: 1.6rem; }
       .inside-note { font-size: 1rem; padding: 1.2rem 1.4rem; }
+      .legal-header, .legal-tabs, .legal-body, .legal-footer { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .legal-header h2 { font-size: 1.2rem; }
+      .legal-tab { height: 2.2rem; padding: 0 1.1rem; font-size: 0.78rem; }
     }
   </style>
 </head>
@@ -373,15 +611,21 @@
         <div class="inside-card">
           <span class="count">3 Templates</span>
           <h3>Introduction</h3>
-          <p>2 Tell your story. Meet the chef, share your journey, and show what makes your restaurant unique.</p>
+          <p>Tell your story. Meet the chef, share your journey, and show what makes your restaurant unique.</p>
         </div>
         <div class="inside-card">
           <span class="count">4 Templates</span>
-          <h3>Services & Info</h3>
+          <h3>Services &amp; Info</h3>
           <p>Opening hours, location, reservation details, and delivery information — all ready to post.</p>
         </div>
-        
-        
+        <div class="inside-card">
+          <span class="count">15 Templates</span>
+          <h3>Ads &amp; Promos</h3>
+          <p>Awareness, Traffic, Engagement, Leads, App Promotion, and Sales — covering every Meta ad objective.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SECTION 1: ORGANIC PREVIEW -->
   <section class="section" style="padding-top:0;">
@@ -483,6 +727,24 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="marker"></span>
+        <h2>Contact Us</h2>
+      </div>
+
+      <div class="contact-block">
+        <h3>The Artistic Unity</h3>
+        <p>📍 No. 251/1/1/1, Galle Road, Panadura, Sri Lanka</p>
+        <p>💬 WhatsApp: <a href="https://wa.me/94705953065" target="_blank" rel="noopener">+94 70 595 3065</a></p>
+        <p>✉️ Email: <a href="mailto:theartisticunity18@gmail.com">theartisticunity18@gmail.com</a></p>
+        <p>🌐 Website: <a href="https://www.theartisticunity.art/" target="_blank" rel="noopener">theartisticunity.art</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="container">
     <div class="cta-section">
@@ -494,8 +756,211 @@
 
   <!-- FOOTER -->
   <div class="footer-note">
-    © 2026 The Artistic Unity — Restaurant Templates · All rights reserved.
+    <div>© 2026 The Artistic Unity — Restaurant Templates · All rights reserved.</div>
+    <button class="legal-btn" id="legalBtn">
+      <span class="shield">⚖️</span>
+      <span>Legal &amp; Policies</span>
+    </button>
   </div>
+
+  <!-- ===== LEGAL MODAL ===== -->
+  <div class="legal-overlay" id="legalOverlay">
+    <div class="legal-popup">
+      <div class="legal-header">
+        <h2>⚖️ Legal &amp; Policies</h2>
+        <button class="close-x" id="legalCloseX" aria-label="Close">✕</button>
+      </div>
+
+      <div class="legal-tabs">
+        <button class="legal-tab active" data-doc="privacy">Privacy Policy</button>
+        <button class="legal-tab" data-doc="terms">Terms of Service</button>
+        <button class="legal-tab" data-doc="refund">Refund Policy</button>
+        <button class="legal-tab" data-doc="cookies">Cookie Policy</button>
+        <button class="legal-tab" data-doc="disclaimer">Disclaimer</button>
+      </div>
+
+      <div class="legal-body" id="legalBody"></div>
+
+      <div class="legal-footer">
+        <button class="legal-close-btn" id="legalCloseBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const docs = {
+        privacy: `
+          <h4>Privacy Policy</h4>
+          <p>The Artistic Unity ("we", "our", "us") respects your privacy. This policy explains how we collect, use, and protect your personal information when you visit our website or purchase our digital products.</p>
+
+          <h4>What We Collect</h4>
+          <ul>
+            <li>Name and email address (provided during purchase)</li>
+            <li>Payment information (processed securely by our payment provider, CopeCart)</li>
+            <li>Anonymized analytics data (via cookies) to improve our website</li>
+          </ul>
+
+          <h4>How We Use It</h4>
+          <ul>
+            <li>To deliver your purchased digital products</li>
+            <li>To respond to inquiries and provide customer support</li>
+            <li>To send order confirmations and updates</li>
+          </ul>
+
+          <h4>Data Security</h4>
+          <p>We use industry-standard encryption and access controls. Your data is stored securely and retained only as long as necessary.</p>
+
+          <h4>Your Rights</h4>
+          <p>You may request access, correction, or deletion of your data at any time by emailing <strong>theartisticunity18@gmail.com</strong>.</p>
+
+          <p>Last revised: September 2026.</p>
+        `,
+        terms: `
+          <h4>Terms of Service</h4>
+          <p>By purchasing or using our digital products, you agree to the following terms.</p>
+
+          <h4>Products</h4>
+          <p>The Artistic Unity sells digital design templates. All products are delivered electronically via Canva Template Links. No physical goods are shipped.</p>
+
+          <h4>License</h4>
+          <ul>
+            <li>Templates are licensed for <strong>personal or single-business use</strong>.</li>
+            <li>You may edit the templates for your own restaurant or business.</li>
+            <li>You may <strong>not</strong> resell, redistribute, or share the templates with others.</li>
+            <li>You may <strong>not</strong> claim the templates as your own design.</li>
+          </ul>
+
+          <h4>Payment</h4>
+          <p>All payments are processed securely by CopeCart. Prices are listed in USD. One-time payment — no subscription or recurring fees.</p>
+
+          <h4>Intellectual Property</h4>
+          <p>All templates remain the intellectual property of The Artistic Unity. Purchase grants a usage license — not ownership of the designs.</p>
+
+          <h4>Limitation of Liability</h4>
+          <p>We are not liable for any indirect, incidental, or consequential damages arising from the use of our products. Our total liability is limited to the amount paid for the product.</p>
+
+          <h4>Governing Law</h4>
+          <p>These terms are governed by the laws of Sri Lanka.</p>
+
+          <p>Last revised: September 2026.</p>
+        `,
+        refund: `
+          <h4>Refund Policy</h4>
+          <p>We want you to be satisfied with your purchase. Please read this policy carefully before buying.</p>
+
+          <h4>Digital Products</h4>
+          <p>Due to the instant-delivery nature of digital products, all sales are considered final once the download link has been accessed.</p>
+
+          <h4>When Refunds Are Considered</h4>
+          <ul>
+            <li>You were charged twice for the same order</li>
+            <li>The product file is broken or cannot be accessed</li>
+            <li>The product was not delivered to you</li>
+          </ul>
+
+          <h4>When Refunds Are Not Issued</h4>
+          <ul>
+            <li>You changed your mind after purchase</li>
+            <li>You don't have the software required (Canva account)</li>
+            <li>You expected a different style than what was delivered</li>
+          </ul>
+
+          <h4>How to Request</h4>
+          <p>Email <strong>theartisticunity18@gmail.com</strong> within <strong>7 days</strong> of purchase with your order number and reason. We'll respond within 48 hours.</p>
+
+          <p>Last revised: September 2026.</p>
+        `,
+        cookies: `
+          <h4>Cookie Policy</h4>
+          <p>This website uses cookies and similar technologies to enhance your browsing experience and analyze site traffic.</p>
+
+          <h4>What Are Cookies?</h4>
+          <p>Small text files stored on your device that help us remember your preferences and understand how you interact with our site.</p>
+
+          <h4>Types of Cookies We Use</h4>
+          <ul>
+            <li><strong>Essential cookies:</strong> Required for the site to function properly.</li>
+            <li><strong>Analytics cookies:</strong> Anonymized data about page views, clicks, and traffic sources.</li>
+            <li><strong>Marketing cookies:</strong> Used only if you consent via our cookie banner.</li>
+          </ul>
+
+          <h4>Your Choice</h4>
+          <p>You can manage or disable cookies in your browser settings. Disabling essential cookies may affect site functionality.</p>
+
+          <h4>Contact</h4>
+          <p>For cookie-related questions, email <strong>theartisticunity18@gmail.com</strong>.</p>
+
+          <p>Last revised: September 2026.</p>
+        `,
+        disclaimer: `
+          <h4>Disclaimer</h4>
+          <p>The information and products provided by The Artistic Unity are for general informational and commercial purposes only.</p>
+
+          <h4>No Guaranteed Results</h4>
+          <p>Our templates are design tools. We do not guarantee specific marketing results, sales figures, or business outcomes from using them. Results depend on many factors beyond our control, including your content, audience, and execution.</p>
+
+          <h4>Third-Party Platforms</h4>
+          <p>Our templates are designed for use with Canva and Meta platforms (Facebook, Instagram). We are not affiliated with Canva, Meta, or any other third-party platform. Any platform changes or limitations are outside our control.</p>
+
+          <h4>External Links</h4>
+          <p>Our website may contain links to third-party sites. We are not responsible for the content or privacy practices of those sites.</p>
+
+          <h4>Limitation of Liability</h4>
+          <p>To the fullest extent permitted by law, The Artistic Unity shall not be liable for any loss or damage arising from the use of this website or our products.</p>
+
+          <p>Last revised: September 2026.</p>
+        `
+      };
+
+      const legalBtn = document.getElementById('legalBtn');
+      const legalOverlay = document.getElementById('legalOverlay');
+      const legalCloseBtn = document.getElementById('legalCloseBtn');
+      const legalCloseX = document.getElementById('legalCloseX');
+      const legalBody = document.getElementById('legalBody');
+      const legalTabs = document.querySelectorAll('.legal-tab');
+
+      function openLegal(docKey) {
+        legalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        loadDoc(docKey || 'privacy');
+      }
+
+      function closeLegal() {
+        legalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function loadDoc(key) {
+        if (!docs[key]) return;
+        legalBody.innerHTML = docs[key];
+        legalBody.scrollTop = 0;
+        legalTabs.forEach(tab => {
+          tab.classList.toggle('active', tab.getAttribute('data-doc') === key);
+        });
+      }
+
+      legalBtn.addEventListener('click', () => openLegal('privacy'));
+      legalCloseBtn.addEventListener('click', closeLegal);
+      legalCloseX.addEventListener('click', closeLegal);
+
+      legalOverlay.addEventListener('click', (e) => {
+        if (e.target === legalOverlay) closeLegal();
+      });
+
+      legalTabs.forEach(tab => {
+        tab.addEventListener('click', () => loadDoc(tab.getAttribute('data-doc')));
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && legalOverlay.classList.contains('active')) {
+          closeLegal();
+        }
+      });
+
+      loadDoc('privacy');
+    })();
+  </script>
 
 </body>
 </html>
