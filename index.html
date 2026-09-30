@@ -105,46 +105,115 @@
       color: #0b1424;
     }
 
-    /* WHAT'S INSIDE */
+    /* ===== WHAT'S INSIDE — IG POST STYLE CARDS ===== */
     .inside-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .inside-grid { grid-template-columns: 1fr; }
     }
 
     .inside-card {
       background: #ffffff;
-      border: 1px solid #e4ebf5;
-      border-radius: 1rem;
-      padding: 1.2rem 1.5rem;
+      border: 1px solid #dbdbdb;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    .inside-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0b1b3a;
-      margin-bottom: 0.4rem;
-    }
-
-    .inside-card p {
-      font-size: 0.9rem;
-      color: #55617d;
-      margin: 0;
-    }
-
+    /* Card top — count tag */
     .inside-card .count {
       display: inline-block;
       background: #eef3fc;
       color: #1a3b7a;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 0.15rem 0.7rem;
+      padding: 0.28rem 0.85rem;
       border-radius: 40px;
-      margin-bottom: 0.5rem;
+      margin: 1rem 1rem 0.6rem 1rem;
+      align-self: flex-start;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    /* IG header row — simplified (⋯ only) */
+    .ig-header-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.3rem 1rem 0.5rem 1rem;
+    }
+
+    .ig-header-menu {
+      font-size: 1rem;
+      color: #262626;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    /* IG image */
+    .ig-card-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #eef3fc;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ig-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ig-card-image .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9aa5bc;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(135deg, #eef3fc 0%, #dbe6fa 100%);
+    }
+
+    /* Caption area */
+    .ig-card-caption {
+      padding: 0.75rem 1rem 1rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .ig-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0b1424;
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .ig-card-desc {
+      font-size: 0.82rem;
+      color: #2b3550;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .ig-card-time {
+      font-size: 0.62rem;
+      color: #8e8e8e;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     /* ELEGANT NOTE */
@@ -338,7 +407,7 @@
       border-top: 1px solid #e9ecef;
     }
 
-    /* ===== APPEALING LEGAL BUTTON ===== */
+    /* LEGAL BUTTON */
     .legal-btn {
       display: inline-flex;
       align-items: center;
@@ -377,7 +446,7 @@
       filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
     }
 
-    /* ===== LEGAL MODAL ===== */
+    /* LEGAL MODAL */
     .legal-overlay {
       position: fixed;
       inset: 0;
@@ -459,7 +528,6 @@
       border-color: #1a3b7a;
     }
 
-    /* ===== FIXED TABS ===== */
     .legal-tabs {
       display: flex;
       flex-wrap: nowrap;
@@ -495,7 +563,6 @@
       transition: all 0.15s;
       text-align: center;
       box-sizing: border-box;
-      vertical-align: middle;
     }
 
     .legal-tab:hover {
@@ -509,7 +576,6 @@
       border-color: #1a3b7a;
     }
 
-    /* ===== BODY ===== */
     .legal-body {
       padding: 1.5rem 2rem;
       overflow-y: auto;
@@ -541,7 +607,6 @@
 
     .legal-body li { margin-bottom: 0.3rem; }
 
-    /* ===== FOOTER ===== */
     .legal-footer {
       padding: 1rem 2rem 1.5rem 2rem;
       border-top: 1px solid #e9ecef;
@@ -586,12 +651,10 @@
       <p>26 ready-to-use Canva templates for restaurants. Feed posts and stories. No design skills needed. Reusable forever.</p>
       <div class="price-tag">$49 · One-Time Payment</div>
       <br>
-      
     </div>
   </section>
 
-
-   <!-- SECTION 1: ORGANIC PREVIEW -->
+  <!-- SECTION 1: ORGANIC PREVIEW -->
   <section class="section" style="padding-top:1;">
     <div class="container">
       <div class="section-head">
@@ -599,7 +662,7 @@
         <h2>See Your Post Live</h2>
       </div>
       <p style="color:#fc0303; font-size:1rem; margin-bottom:1.5rem; max-width:620px;">
-       This is how the custom templates we have made for you look like in a post.
+        This is how the custom templates we have made for you look like in a post.
       </p>
       <a href="https://restaurant-organic-reach-mock-up.vercel.app/"
          target="_blank"
@@ -618,7 +681,7 @@
         <h2>See Your Ad Live</h2>
       </div>
       <p style="color:#f40707; font-size:1rem; margin-bottom:1.5rem; max-width:620px;">
-       This is how the custom templates we have made for you look like in an Ad.
+        This is how the custom templates we have made for you look like in an Ad.
       </p>
       <a href="https://restaurant-ad-creative.vercel.app/"
          target="_blank"
@@ -643,35 +706,93 @@
 
       <div class="inside-grid">
 
-       <div class="inside-card">
+        <!-- CARD 1: INTRODUCTION -->
+        <div class="inside-card">
           <span class="count">6 Templates (1:1=03 / 9:18=03)</span>
-          <h3>Introduction</h3>
-          <p>Tell your story. Share your journey, and show what makes your restaurant unique. This  is your FIRST IMPRESSION</p>
+
+          <div class="ig-header-row">
+            <div class="ig-header-menu">⋯</div>
+          </div>
+
+          <div class="ig-card-image">
+            <img src="https://i.postimg.cc/FRPpxSFH/1-(6).png"
+                 alt="Introduction preview"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Paste your Introduction image URL here</div>';">
+          </div>
+
+          <div class="ig-card-caption">
+            <h3 class="ig-card-title">Introduction- EXAMPLE</h3>
+            <p class="ig-card-desc">Tell your story. Share your journey, and show what makes your restaurant unique. This is your FIRST IMPRESSION.</p>
+            <div class="ig-card-time">2 hours ago</div>
+          </div>
         </div>
 
+        <!-- CARD 2: PRODUCT SHOW-OFF -->
         <div class="inside-card">
-          <span class="count">20 Templates(1:1=10 / 9:18=10)</span>
-          <h3>Product Show-Off</h3>
-          <p>"Main objective is to make the viewers FEEL THE TASTE of your food, and INSPIRE them to place an Order."</p>
+          <span class="count">20 Templates (1:1=10 / 9:18=10)</span>
+
+          <div class="ig-header-row">
+            <div class="ig-header-menu">⋯</div>
+          </div>
+
+          <div class="ig-card-image">
+            <img src="https://i.postimg.cc/MTs5YBZx/7-(3).png"
+                 alt="Product Show-Off preview"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Paste your Product Show-Off image URL here</div>';">
+          </div>
+
+          <div class="ig-card-caption">
+            <h3 class="ig-card-title">Product Show-Off- EXAMPLE</h3>
+            <p class="ig-card-desc">"Main objective is to make the viewers FEEL THE TASTE of your food, and INSPIRE them to place an Order."</p>
+            <div class="ig-card-time">2 hours ago</div>
+          </div>
         </div>
 
-
+        <!-- CARD 3: SERVICES -->
         <div class="inside-card">
-          <span class="count"> "The CTA button lands them on your service page."</span>
-          <h3>Services &amp; Info</h3>
-          <p>"Client gets INSPIRED → clicks CTA (Order Now, Read More etc.) → lands on your chosen channel (website, WhatsApp, etc.) → where you deliver the Service: prices, menu, and negotiations."</p>
+          <span class="count">Services &amp; Info</span>
+
+          <div class="ig-header-row">
+            <div class="ig-header-menu">⋯</div>
+          </div>
+
+          <div class="ig-card-image">
+            <img src="https://i.postimg.cc/T1FczXWn/3-(8).png"
+                 alt="Services preview"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Paste your Services image URL here</div>';">
+          </div>
+
+          <div class="ig-card-caption">
+            <h3 class="ig-card-title">Services- EXAMPLE</h3>
+            <p class="ig-card-desc">"Client gets INSPIRED → clicks CTA (Order Now, Read More etc.) → lands on your chosen channel (website, WhatsApp, etc.) → where you deliver the Service: prices, menu, and negotiations."</p>
+            <div class="ig-card-time">2 hours ago</div>
+          </div>
         </div>
 
+        <!-- CARD 4: COMPLETE KIT -->
         <div class="inside-card">
-          <span class="count">Complete Kit </span>
-          <h3>Introduction + Prduct Show-Off + Service </h3>
-          <p>" Strong First Impression + Perfect Taste + Effective Service = Revenue Generation"</p>
+          <span class="count">Complete Kit</span>
+
+          <div class="ig-header-row">
+            <div class="ig-header-menu">⋯</div>
+          </div>
+
+          <div class="ig-card-image">
+            <img src="https://i.postimg.cc/GtHQgp9k/Copy-of-The-Artistic-Unity.png"
+                 alt="Complete Kit preview"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Paste your Complete Kit image URL here</div>';">
+          </div>
+
+          <div class="ig-card-caption">
+            <h3 class="ig-card-title">Introduction + Product Show-Off + Service</h3>
+            <p class="ig-card-desc">"Strong First Impression + Perfect Taste + Effective Service = Revenue Generation"</p>
+            <div class="ig-card-time">2 hours ago</div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
-
- 
 
   <!-- WHO IT'S FOR -->
   <section class="section" style="padding-top:0;">
@@ -771,7 +892,7 @@
     </button>
   </div>
 
-  <!-- ===== LEGAL MODAL ===== -->
+  <!-- LEGAL MODAL -->
   <div class="legal-overlay" id="legalOverlay">
     <div class="legal-popup">
       <div class="legal-header">
